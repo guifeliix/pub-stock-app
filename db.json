@@ -1,0 +1,19 @@
+{
+  "catalog": [
+    {
+      "id": 1769729992900,
+      "name": "Pepsi",
+      "section": "Fridge"
+    },
+    {
+      "id": 1769730012587,
+      "name": "Magners Apple",
+      "section": "Keg Room"
+    },
+    {
+      "id": 1769730018788,
+      "name": "Large Still Water",
+      "section": "Water Room"
+    }
+  ]
+}
