@@ -3,15 +3,15 @@ import './StockManager.css';
 
 const SECTIONS = ['Fridge', 'Keg Room', 'Water Room'];
 
-const StockManager = () => {
+const StockManager = ({ catalog, setCatalog }) => {
     // Current Shopping List
     const [products, setProducts] = useState(() => {
         const saved = localStorage.getItem('pub-stock-list');
         return saved ? JSON.parse(saved) : [];
     });
 
-    // Validated Product Catalog
-    const [catalog, setCatalog] = useState([]);
+    // Validated Product Catalog passed from props
+
 
     const [name, setName] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -26,13 +26,7 @@ const StockManager = () => {
         localStorage.setItem('pub-stock-list', JSON.stringify(products));
     }, [products]);
 
-    // Load Catalog from API
-    useEffect(() => {
-        fetch('/api/catalog')
-            .then(res => res.json())
-            .then(data => setCatalog(data))
-            .catch(err => console.error('Failed to load catalog:', err));
-    }, []);
+
 
     // HANDLERS
 
